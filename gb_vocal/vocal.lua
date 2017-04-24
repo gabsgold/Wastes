@@ -61,20 +61,21 @@ local portevoix = 10.0
 Citizen.CreateThread(function()
 	while true do
 		Citizen.Wait(0)
-		if IsControlJustPressed(1, Keys["G"]) then
-		  if portevoix == 2.0 then
+		if IsControlJustPressed(1, Keys["N+"]) then
+		  if portevoix <= 2.0 then
 		    portevoix = 10.0
-			NetworkSetTalkerProximity(portevoix)
-			Texte("Vous parlez à haute voix", 5000)
-		  elseif portevoix == 10.0
+--			NetworkSetTalkerProximity(portevoix)
+			Texte("Vous parlez à haute voix (~g~".. portevoix .."~s~m)", 5000)
+		  elseif portevoix == 10.0 then
 		    portevoix = 26.0
-			NetworkSetTalkerProximity(portevoix)
-			Texte("Vous criez", 5000)
-		  elseif portevoix == 26.0
+--			NetworkSetTalkerProximity(portevoix)
+			Texte("Vous criez (~g~".. portevoix .."~s~m)", 5000)
+		  elseif portevoix >= 26.0 then
 		    portevoix = 2.0
-			NetworkSetTalkerProximity(portevoix)
-			Texte("Vous chuchotez", 5000)
+--			NetworkSetTalkerProximity(portevoix)
+			Texte("Vous chuchotez (~g~".. portevoix .."~s~m)", 5000)
 		  end
+		  NetworkSetTalkerProximity(portevoix)
 		end
 	end
 end)
