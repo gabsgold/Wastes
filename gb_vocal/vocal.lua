@@ -84,14 +84,6 @@ Citizen.CreateThread(function()
 	end
 end)
 
-Citizen.CreateThread(function ()
-	while true do
-	Citizen.Wait(0)
---		local posPlayer = GetEntityCoords(GetPlayerPed(-1))
---		DrawMarker(1, posPlayer.x, posPlayer.y, posPlayer.z - 1, 0, 0, 0, 0, 0, 0, 12.4001, 12.4001, 0.8001, 0, 75, 255, 165, 0,0, 0,0)
-	end
-end)
-
 function Texte(_texte, showtime)
     ClearPrints()
 	SetTextEntry_2("STRING")
